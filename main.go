@@ -137,7 +137,7 @@ func getClient() *minio.Client {
 	endpoint := getOrDefault("S3_ENDPOINT", "play.min.io")
 	accessKeyID := getOrDefault("S3_AK", "Q3AM3UQ867SPQQA43P2F")
 	secretAccessKey := getOrDefault("S3_SK", "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG")
-	useSSL := true
+	useSSL := getOrDefault("S3_SSL", "true") == "true"
 
 	// Initialize minio client object.
 	minioClient, err := minio.New(endpoint, &minio.Options{
