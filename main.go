@@ -50,7 +50,7 @@ const (
 func getObjectNamePrefix(guid string) string {
 	// date - guid - uuid
 	current_time := time.Now()
-	time_str := fmt.Sprintf("%d-%d-%d-%d:%d:%d",
+	time_str := fmt.Sprintf("%d-%02d-%02d-%02d-%02d-%02d",
 		current_time.Year(), current_time.Month(), current_time.Day(),
 		current_time.Hour(), current_time.Minute(), current_time.Second())
 	id := uuid.New()
